@@ -1,0 +1,694 @@
+{
+  "environment": "test",
+  "transactions": [
+    {
+      "orderId": "ord_1789074451406_2htfk",
+      "merchantId": "mer_dejoiypay_01",
+      "environment": "test",
+      "amount": 1850,
+      "currency": "INR",
+      "status": "SUCCESS",
+      "provider": "direct-upi",
+      "providerPaymentId": "upi_pay_1789074451406_ydvq1x",
+      "paymentMethod": {
+        "type": "upi",
+        "upi": {
+          "vpa": "tarun@okaxis",
+          "flow": "collect",
+          "rrn": "272942166977"
+        }
+      },
+      "customer": {
+        "name": "Tarun Saxena",
+        "email": "tarun@example.com",
+        "phone": "9812345678"
+      },
+      "settlementStatus": "pending",
+      "idempotencyKey": "test_idem_1789074451",
+      "timeline": [
+        {
+          "status": "CREATED",
+          "timestamp": "2026-09-10T21:07:31.407Z",
+          "message": "Order ord_1789074451406_2htfk created for ₹1850.00 via direct-upi",
+          "source": "customer"
+        },
+        {
+          "status": "SUCCESS",
+          "timestamp": "2026-09-10T21:07:31.407Z",
+          "message": "Payment confirmed by direct-upi (RRN: 272942166977)",
+          "source": "provider"
+        }
+      ],
+      "id": "dj_pay_1789074451407_jkfi",
+      "fee": 37,
+      "tax": 6.66,
+      "netAmount": 1806.34,
+      "refunds": [],
+      "createdAt": "2026-09-10T21:07:31.407Z",
+      "updatedAt": "2026-09-10T21:07:31.407Z"
+    },
+    {
+      "orderId": "ord_sm_1789074196062",
+      "merchantId": "mer_test",
+      "environment": "test",
+      "amount": 1000,
+      "currency": "INR",
+      "status": "REFUNDED",
+      "provider": "direct-upi",
+      "paymentMethod": {
+        "type": "upi",
+        "upi": {
+          "vpa": "user@upi",
+          "flow": "intent"
+        }
+      },
+      "customer": {
+        "name": "Test User",
+        "email": "user@example.com",
+        "phone": "9876543210"
+      },
+      "settlementStatus": "pending",
+      "id": "dj_pay_1789074196062_snn2",
+      "fee": 20,
+      "tax": 3.6,
+      "netAmount": 976.4,
+      "timeline": [
+        {
+          "status": "SUCCESS",
+          "timestamp": "2026-09-10T21:03:16.062Z",
+          "message": "Transaction initialized with status SUCCESS",
+          "source": "system"
+        },
+        {
+          "status": "PARTIALLY_REFUNDED",
+          "timestamp": "2026-09-10T21:03:16.063Z",
+          "message": "Refund of ₹400.00 processed (Partial return)",
+          "source": "merchant"
+        },
+        {
+          "status": "REFUNDED",
+          "timestamp": "2026-09-10T21:03:16.064Z",
+          "message": "Refund of ₹600.00 processed (Remaining return)",
+          "source": "merchant"
+        }
+      ],
+      "refunds": [
+        {
+          "id": "dj_ref_1789074196063_nl7o",
+          "paymentId": "dj_pay_1789074196062_snn2",
+          "amount": 400,
+          "currency": "INR",
+          "reason": "Partial return",
+          "status": "SUCCESS",
+          "providerRefundId": "p_ref_1789074196063",
+          "createdAt": "2026-09-10T21:03:16.063Z",
+          "updatedAt": "2026-09-10T21:03:16.063Z"
+        },
+        {
+          "id": "dj_ref_1789074196064_c7nm",
+          "paymentId": "dj_pay_1789074196062_snn2",
+          "amount": 600,
+          "currency": "INR",
+          "reason": "Remaining return",
+          "status": "SUCCESS",
+          "providerRefundId": "p_ref_1789074196064",
+          "createdAt": "2026-09-10T21:03:16.064Z",
+          "updatedAt": "2026-09-10T21:03:16.064Z"
+        }
+      ],
+      "createdAt": "2026-09-10T21:03:16.062Z",
+      "updatedAt": "2026-09-10T21:03:16.062Z"
+    },
+    {
+      "id": "dj_pay_109283741",
+      "orderId": "ord_inv_88210",
+      "merchantId": "mer_dejoiypay_01",
+      "environment": "test",
+      "amount": 4500,
+      "currency": "INR",
+      "fee": 90,
+      "tax": 16.2,
+      "netAmount": 4393.8,
+      "status": "SUCCESS",
+      "provider": "direct-upi",
+      "providerPaymentId": "upi_pay_99812401",
+      "paymentMethod": {
+        "type": "upi",
+        "upi": {
+          "vpa": "rohan.verma@okhdfcbank",
+          "flow": "intent",
+          "rrn": "425510982314"
+        }
+      },
+      "customer": {
+        "id": "cust_delhi_01",
+        "name": "Rohan Verma",
+        "email": "rohan.verma@example.com",
+        "phone": "+91 98112 34567"
+      },
+      "notes": {
+        "plan": "DejoiY Cloud Pro Annual",
+        "invoiceNumber": "INV-2026-09-001"
+      },
+      "timeline": [
+        {
+          "status": "CREATED",
+          "timestamp": "2026-09-10T19:03:16.058Z",
+          "message": "Order created via Checkout Link",
+          "source": "customer"
+        },
+        {
+          "status": "PENDING",
+          "timestamp": "2026-09-10T19:03:16.058Z",
+          "message": "UPI Intent triggered on HDFC Bank app",
+          "source": "provider"
+        },
+        {
+          "status": "SUCCESS",
+          "timestamp": "2026-09-10T19:03:16.058Z",
+          "message": "Payment authorized and captured (RRN: 425510982314)",
+          "source": "provider"
+        }
+      ],
+      "refunds": [],
+      "settlementStatus": "settled",
+      "settlementId": "dj_set_90112",
+      "createdAt": "2026-09-10T19:03:16.058Z",
+      "updatedAt": "2026-09-10T19:03:16.058Z"
+    },
+    {
+      "id": "dj_pay_109283742",
+      "orderId": "ord_inv_88211",
+      "merchantId": "mer_dejoiypay_01",
+      "environment": "test",
+      "amount": 12500,
+      "currency": "INR",
+      "fee": 250,
+      "tax": 45,
+      "netAmount": 12205,
+      "status": "SUCCESS",
+      "provider": "razorpay",
+      "providerPaymentId": "pay_rzp_9843109",
+      "paymentMethod": {
+        "type": "card",
+        "card": {
+          "last4": "4242",
+          "network": "visa",
+          "type": "credit",
+          "issuer": "HDFC Bank",
+          "tokenized": true
+        }
+      },
+      "customer": {
+        "id": "cust_bengaluru_02",
+        "name": "Priyanka Sundaram",
+        "email": "priyanka.sundaram@techindia.org",
+        "phone": "+91 99001 88234"
+      },
+      "notes": {
+        "service": "Enterprise API Gateway Subscription"
+      },
+      "timeline": [
+        {
+          "status": "CREATED",
+          "timestamp": "2026-09-10T16:03:16.058Z",
+          "message": "Payment intent created",
+          "source": "customer"
+        },
+        {
+          "status": "PROCESSING",
+          "timestamp": "2026-09-10T16:03:16.058Z",
+          "message": "3D Secure OTP verification in progress",
+          "source": "provider"
+        },
+        {
+          "status": "SUCCESS",
+          "timestamp": "2026-09-10T16:03:16.058Z",
+          "message": "Payment captured successfully via Razorpay",
+          "source": "provider"
+        }
+      ],
+      "refunds": [],
+      "settlementStatus": "pending",
+      "createdAt": "2026-09-10T16:03:16.058Z",
+      "updatedAt": "2026-09-10T16:03:16.058Z"
+    },
+    {
+      "id": "dj_pay_109283743",
+      "orderId": "ord_inv_88212",
+      "merchantId": "mer_dejoiypay_01",
+      "environment": "test",
+      "amount": 3200,
+      "currency": "INR",
+      "fee": 64,
+      "tax": 11.52,
+      "netAmount": 3124.48,
+      "status": "REFUNDED",
+      "provider": "direct-upi",
+      "providerPaymentId": "upi_pay_7721890",
+      "paymentMethod": {
+        "type": "upi",
+        "upi": {
+          "vpa": "priyanka@ybl",
+          "flow": "qr",
+          "rrn": "425510443219"
+        }
+      },
+      "customer": {
+        "id": "cust_bengaluru_02",
+        "name": "Priyanka Sundaram",
+        "email": "priyanka.sundaram@techindia.org",
+        "phone": "+91 99001 88234"
+      },
+      "timeline": [
+        {
+          "status": "CREATED",
+          "timestamp": "2026-09-09T21:03:16.058Z",
+          "message": "QR Code scanned at DejoiY kiosk",
+          "source": "customer"
+        },
+        {
+          "status": "SUCCESS",
+          "timestamp": "2026-09-09T21:03:16.058Z",
+          "message": "Payment confirmed via Soundbox",
+          "source": "provider"
+        },
+        {
+          "status": "REFUNDED",
+          "timestamp": "2026-09-10T13:03:16.058Z",
+          "message": "Full refund initiated by merchant: Customer return",
+          "source": "merchant"
+        }
+      ],
+      "refunds": [
+        {
+          "id": "dj_ref_77192",
+          "paymentId": "dj_pay_109283743",
+          "amount": 3200,
+          "currency": "INR",
+          "reason": "Customer requested cancellation within 24h",
+          "status": "SUCCESS",
+          "providerRefundId": "upi_ref_449102",
+          "createdAt": "2026-09-10T13:03:16.058Z",
+          "updatedAt": "2026-09-10T13:03:16.058Z"
+        }
+      ],
+      "settlementStatus": "pending",
+      "createdAt": "2026-09-09T21:03:16.058Z",
+      "updatedAt": "2026-09-10T13:03:16.058Z"
+    },
+    {
+      "id": "dj_pay_109283744",
+      "orderId": "ord_inv_88213",
+      "merchantId": "mer_dejoiypay_01",
+      "environment": "test",
+      "amount": 899,
+      "currency": "INR",
+      "fee": 0,
+      "tax": 0,
+      "netAmount": 0,
+      "status": "FAILED",
+      "failureReason": "Bank declined transaction: Insufficient funds in linked account",
+      "provider": "direct-upi",
+      "paymentMethod": {
+        "type": "upi",
+        "upi": {
+          "vpa": "aditya.kapoor@oksbi",
+          "flow": "collect"
+        }
+      },
+      "customer": {
+        "id": "cust_mumbai_03",
+        "name": "Aditya Kapoor",
+        "email": "aditya.kapoor@innovate.co",
+        "phone": "+91 98200 55432"
+      },
+      "timeline": [
+        {
+          "status": "CREATED",
+          "timestamp": "2026-09-08T21:03:16.058Z",
+          "message": "UPI Collect request generated",
+          "source": "merchant"
+        },
+        {
+          "status": "FAILED",
+          "timestamp": "2026-09-08T21:03:16.058Z",
+          "message": "Declined by SBI UPI Switch: Insufficient Funds (U16)",
+          "source": "provider"
+        }
+      ],
+      "refunds": [],
+      "settlementStatus": "pending",
+      "createdAt": "2026-09-08T21:03:16.058Z",
+      "updatedAt": "2026-09-08T21:03:16.058Z"
+    },
+    {
+      "id": "dj_pay_109283745",
+      "orderId": "ord_inv_88214",
+      "merchantId": "mer_dejoiypay_01",
+      "environment": "test",
+      "amount": 28500,
+      "currency": "INR",
+      "fee": 570,
+      "tax": 102.6,
+      "netAmount": 27827.4,
+      "status": "SUCCESS",
+      "provider": "stripe",
+      "providerPaymentId": "ch_strp_994120",
+      "paymentMethod": {
+        "type": "card",
+        "card": {
+          "last4": "9012",
+          "network": "mastercard",
+          "type": "credit",
+          "issuer": "Citibank",
+          "tokenized": true
+        }
+      },
+      "customer": {
+        "id": "cust_hyderabad_04",
+        "name": "Sneha Reddy",
+        "email": "sneha.reddy@startup.in",
+        "phone": "+91 97010 33412"
+      },
+      "timeline": [
+        {
+          "status": "CREATED",
+          "timestamp": "2026-09-07T21:03:16.058Z",
+          "message": "International invoice checkout loaded",
+          "source": "customer"
+        },
+        {
+          "status": "PROCESSING",
+          "timestamp": "2026-09-07T21:03:16.058Z",
+          "message": "Risk assessment passed (Stripe Radar)",
+          "source": "provider"
+        },
+        {
+          "status": "SUCCESS",
+          "timestamp": "2026-09-07T21:03:16.058Z",
+          "message": "Charge confirmed and settled",
+          "source": "provider"
+        }
+      ],
+      "refunds": [],
+      "settlementStatus": "settled",
+      "settlementId": "dj_set_90110",
+      "createdAt": "2026-09-07T21:03:16.058Z",
+      "updatedAt": "2026-09-07T21:03:16.058Z"
+    }
+  ],
+  "paymentLinks": [
+    {
+      "id": "dj_plink_88190",
+      "merchantId": "mer_dejoiypay_01",
+      "environment": "test",
+      "amount": 2499,
+      "currency": "INR",
+      "description": "DejoiY Developer Annual License Key (Team Tier)",
+      "customer": {
+        "name": "Vikram Mehta",
+        "email": "vikram@mehta.dev",
+        "phone": "+91 98450 11223"
+      },
+      "status": "ACTIVE",
+      "expiresAt": "2026-09-17T21:03:16.058Z",
+      "customReference": "DEV-LIC-2026",
+      "visitsCount": 14,
+      "qrPayload": "upi://pay?pa=dejoiypay.merchant@icici&pn=DejoiY%20Technologies&am=2499.00&cu=INR&tr=dj_plink_88190",
+      "createdAt": "2026-09-09T21:03:16.058Z",
+      "updatedAt": "2026-09-09T21:03:16.058Z"
+    },
+    {
+      "id": "dj_plink_88191",
+      "merchantId": "mer_dejoiypay_01",
+      "environment": "test",
+      "amount": 15000,
+      "currency": "INR",
+      "description": "Custom Fintech Integration & Security Audit Retainer",
+      "customer": {
+        "name": "Kavita Rao",
+        "email": "kavita@fintechzen.com",
+        "phone": "+91 99200 44556"
+      },
+      "status": "PAID",
+      "expiresAt": "2026-09-09T21:03:16.058Z",
+      "customReference": "AUDIT-ZEN-01",
+      "paidAt": "2026-09-10T15:03:16.058Z",
+      "paymentId": "dj_pay_109283742",
+      "visitsCount": 4,
+      "qrPayload": "upi://pay?pa=dejoiypay.merchant@icici&pn=DejoiY%20Technologies&am=15000.00&cu=INR&tr=dj_plink_88191",
+      "createdAt": "2026-09-06T21:03:16.058Z",
+      "updatedAt": "2026-09-10T15:03:16.058Z"
+    }
+  ],
+  "qrCodes": [
+    {
+      "id": "dj_qr_counter_01",
+      "merchantId": "mer_dejoiypay_01",
+      "type": "static",
+      "title": "Main Billing Counter QR",
+      "vpa": "dejoiypay.merchant@icici",
+      "merchantName": "DejoiY Technologies Pvt Ltd",
+      "mcc": "6012",
+      "status": "ACTIVE",
+      "qrPayload": "upi://pay?pa=dejoiypay.merchant@icici&pn=DejoiY%20Technologies%20Pvt%20Ltd&mc=6012&cu=INR&mode=01",
+      "totalCollected": 184500,
+      "transactionCount": 88,
+      "createdAt": "2026-07-12T21:03:16.058Z"
+    },
+    {
+      "id": "dj_qr_event_02",
+      "merchantId": "mer_dejoiypay_01",
+      "type": "dynamic",
+      "title": "Bangalore Tech Expo 2026 Booth Standee",
+      "amount": 499,
+      "currency": "INR",
+      "vpa": "dejoiypay.merchant@icici",
+      "merchantName": "DejoiY Technologies",
+      "mcc": "6012",
+      "status": "ACTIVE",
+      "qrPayload": "upi://pay?pa=dejoiypay.merchant@icici&pn=DejoiY%20Technologies&mc=6012&am=499.00&cu=INR&mode=01&tr=EXPO2026",
+      "totalCollected": 24950,
+      "transactionCount": 50,
+      "createdAt": "2026-08-31T21:03:16.058Z"
+    }
+  ],
+  "settlements": [
+    {
+      "id": "dj_set_90112",
+      "merchantId": "mer_dejoiypay_01",
+      "amount": 85200,
+      "fee": 1704,
+      "tax": 306.72,
+      "netSettled": 83189.28,
+      "status": "SETTLED",
+      "bankAccount": {
+        "accountNumberMasked": "•••• •••• 9102",
+        "ifsc": "HDFC0000050",
+        "bankName": "HDFC Bank Ltd",
+        "beneficiaryName": "DEJOIY TECHNOLOGIES PVT LTD"
+      },
+      "utr": "HDFCR2026090800192841",
+      "transactionIds": [
+        "dj_pay_109283741"
+      ],
+      "scheduledAt": "2026-09-08T21:03:16.058Z",
+      "settledAt": "2026-09-09T21:03:16.058Z",
+      "createdAt": "2026-09-08T21:03:16.058Z"
+    },
+    {
+      "id": "dj_set_90110",
+      "merchantId": "mer_dejoiypay_01",
+      "amount": 42000,
+      "fee": 840,
+      "tax": 151.2,
+      "netSettled": 41008.8,
+      "status": "SETTLED",
+      "bankAccount": {
+        "accountNumberMasked": "•••• •••• 9102",
+        "ifsc": "HDFC0000050",
+        "bankName": "HDFC Bank Ltd",
+        "beneficiaryName": "DEJOIY TECHNOLOGIES PVT LTD"
+      },
+      "utr": "HDFCR2026090500881923",
+      "transactionIds": [
+        "dj_pay_109283745"
+      ],
+      "scheduledAt": "2026-09-05T21:03:16.058Z",
+      "settledAt": "2026-09-06T21:03:16.058Z",
+      "createdAt": "2026-09-05T21:03:16.058Z"
+    }
+  ],
+  "customers": [
+    {
+      "id": "cust_delhi_01",
+      "merchantId": "mer_dejoiypay_01",
+      "name": "Rohan Verma",
+      "email": "rohan.verma@example.com",
+      "phone": "+91 98112 34567",
+      "totalSpent": 42500,
+      "transactionCount": 12,
+      "lastPaymentAt": "2026-09-10T19:03:16.058Z",
+      "refundsCount": 0,
+      "createdAt": "2026-07-27T21:03:16.058Z"
+    },
+    {
+      "id": "cust_bengaluru_02",
+      "merchantId": "mer_dejoiypay_01",
+      "name": "Priyanka Sundaram",
+      "email": "priyanka.sundaram@techindia.org",
+      "phone": "+91 99001 88234",
+      "totalSpent": 87400,
+      "transactionCount": 28,
+      "lastPaymentAt": "2026-09-10T16:03:16.058Z",
+      "refundsCount": 1,
+      "createdAt": "2026-07-12T21:03:16.058Z"
+    },
+    {
+      "id": "cust_mumbai_03",
+      "merchantId": "mer_dejoiypay_01",
+      "name": "Aditya Kapoor",
+      "email": "aditya.kapoor@innovate.co",
+      "phone": "+91 98200 55432",
+      "totalSpent": 19800,
+      "transactionCount": 5,
+      "lastPaymentAt": "2026-09-09T21:03:16.058Z",
+      "refundsCount": 0,
+      "createdAt": "2026-08-21T21:03:16.058Z"
+    },
+    {
+      "id": "cust_hyderabad_04",
+      "merchantId": "mer_dejoiypay_01",
+      "name": "Sneha Reddy",
+      "email": "sneha.reddy@startup.in",
+      "phone": "+91 97010 33412",
+      "totalSpent": 135000,
+      "transactionCount": 42,
+      "lastPaymentAt": "2026-09-08T21:03:16.058Z",
+      "refundsCount": 2,
+      "createdAt": "2026-06-12T21:03:16.058Z"
+    },
+    {
+      "id": "dj_cust_1789074196062",
+      "merchantId": "mer_test",
+      "name": "Test User",
+      "email": "user@example.com",
+      "phone": "9876543210",
+      "totalSpent": 1000,
+      "transactionCount": 1,
+      "lastPaymentAt": "2026-09-10T21:03:16.062Z",
+      "refundsCount": 0,
+      "createdAt": "2026-09-10T21:03:16.062Z"
+    },
+    {
+      "id": "dj_cust_1789074451407",
+      "merchantId": "mer_dejoiypay_01",
+      "name": "Tarun Saxena",
+      "email": "tarun@example.com",
+      "phone": "9812345678",
+      "totalSpent": 1850,
+      "transactionCount": 1,
+      "lastPaymentAt": "2026-09-10T21:07:31.407Z",
+      "refundsCount": 0,
+      "createdAt": "2026-09-10T21:07:31.407Z"
+    }
+  ],
+  "webhooks": [
+    {
+      "id": "wh_ep_01",
+      "merchantId": "mer_dejoiypay_01",
+      "url": "https://api.example.com/webhooks/dejoiypay",
+      "secret": "whsec_99182a4c11b0e9823f",
+      "events": [
+        "payment.success",
+        "payment.failed",
+        "refund.processed",
+        "settlement.completed"
+      ],
+      "status": "active",
+      "createdAt": "2026-08-11T21:03:16.058Z"
+    }
+  ],
+  "webhookLogs": [
+    {
+      "id": "wh_log_01",
+      "endpointId": "wh_ep_01",
+      "event": "payment.success",
+      "payload": {
+        "event": "payment.success",
+        "paymentId": "dj_pay_109283741",
+        "amount": 4500
+      },
+      "statusCode": 200,
+      "responseBody": "{\"received\": true}",
+      "status": "success",
+      "attempts": 1,
+      "sentAt": "2026-09-10T19:03:16.058Z"
+    }
+  ],
+  "consumerWallet": {
+    "id": "wlt_usr_01",
+    "userId": "usr_dejoiypay_01",
+    "name": "Aakash Sharma",
+    "phone": "+91 98765 43210",
+    "email": "aakash.sharma@dejoiypay.com",
+    "balance": 24850.75,
+    "currency": "INR",
+    "vpa": "aakash@dejoiypay",
+    "upiPinConfigured": true,
+    "dailyLimit": 100000,
+    "perTxnLimit": 50000,
+    "biometricEnabled": true,
+    "savedMethods": {
+      "upiIds": [
+        {
+          "id": "upi_1",
+          "vpa": "aakash@okhdfcbank",
+          "bankName": "HDFC Bank",
+          "isDefault": true
+        },
+        {
+          "id": "upi_2",
+          "vpa": "aakash@okicici",
+          "bankName": "ICICI Bank",
+          "isDefault": false
+        }
+      ],
+      "bankAccounts": [
+        {
+          "id": "bnk_1",
+          "bankName": "HDFC Bank Ltd",
+          "accountNumberMasked": "•••• •••• 4092",
+          "ifsc": "HDFC0000128",
+          "isPrimary": true
+        },
+        {
+          "id": "bnk_2",
+          "bankName": "State Bank of India",
+          "accountNumberMasked": "•••• •••• 9918",
+          "ifsc": "SBIN0001824",
+          "isPrimary": false
+        }
+      ],
+      "cards": [
+        {
+          "id": "crd_1",
+          "last4": "8821",
+          "network": "visa",
+          "expMonth": "08",
+          "expYear": "28",
+          "cardHolder": "AAKASH SHARMA"
+        },
+        {
+          "id": "crd_2",
+          "last4": "4109",
+          "network": "rupay",
+          "expMonth": "11",
+          "expYear": "27",
+          "cardHolder": "AAKASH SHARMA"
+        }
+      ]
+    }
+  }
+}
