@@ -2,6 +2,78 @@
   "environment": "test",
   "transactions": [
     {
+      "orderId": "ord_sm_1789074846908",
+      "merchantId": "mer_test",
+      "environment": "test",
+      "amount": 1000,
+      "currency": "INR",
+      "status": "REFUNDED",
+      "provider": "direct-upi",
+      "paymentMethod": {
+        "type": "upi",
+        "upi": {
+          "vpa": "user@upi",
+          "flow": "intent"
+        }
+      },
+      "customer": {
+        "name": "Test User",
+        "email": "user@example.com",
+        "phone": "9876543210"
+      },
+      "settlementStatus": "pending",
+      "id": "dj_pay_1789074846908_8nr1",
+      "fee": 20,
+      "tax": 3.6,
+      "netAmount": 976.4,
+      "timeline": [
+        {
+          "status": "SUCCESS",
+          "timestamp": "2026-09-10T21:14:06.908Z",
+          "message": "Transaction initialized with status SUCCESS",
+          "source": "system"
+        },
+        {
+          "status": "PARTIALLY_REFUNDED",
+          "timestamp": "2026-09-10T21:14:06.909Z",
+          "message": "Refund of ₹400.00 processed (Partial return)",
+          "source": "merchant"
+        },
+        {
+          "status": "REFUNDED",
+          "timestamp": "2026-09-10T21:14:06.910Z",
+          "message": "Refund of ₹600.00 processed (Remaining return)",
+          "source": "merchant"
+        }
+      ],
+      "refunds": [
+        {
+          "id": "dj_ref_1789074846909_wpv0",
+          "paymentId": "dj_pay_1789074846908_8nr1",
+          "amount": 400,
+          "currency": "INR",
+          "reason": "Partial return",
+          "status": "SUCCESS",
+          "providerRefundId": "p_ref_1789074846909",
+          "createdAt": "2026-09-10T21:14:06.909Z",
+          "updatedAt": "2026-09-10T21:14:06.909Z"
+        },
+        {
+          "id": "dj_ref_1789074846910_na6p",
+          "paymentId": "dj_pay_1789074846908_8nr1",
+          "amount": 600,
+          "currency": "INR",
+          "reason": "Remaining return",
+          "status": "SUCCESS",
+          "providerRefundId": "p_ref_1789074846910",
+          "createdAt": "2026-09-10T21:14:06.910Z",
+          "updatedAt": "2026-09-10T21:14:06.910Z"
+        }
+      ],
+      "createdAt": "2026-09-10T21:14:06.908Z",
+      "updatedAt": "2026-09-10T21:14:06.908Z"
+    },
+    {
       "orderId": "ord_1789074451406_2htfk",
       "merchantId": "mer_dejoiypay_01",
       "environment": "test",
@@ -575,9 +647,9 @@
       "name": "Test User",
       "email": "user@example.com",
       "phone": "9876543210",
-      "totalSpent": 1000,
-      "transactionCount": 1,
-      "lastPaymentAt": "2026-09-10T21:03:16.062Z",
+      "totalSpent": 2000,
+      "transactionCount": 2,
+      "lastPaymentAt": "2026-09-10T21:14:06.908Z",
       "refundsCount": 0,
       "createdAt": "2026-09-10T21:03:16.062Z"
     },

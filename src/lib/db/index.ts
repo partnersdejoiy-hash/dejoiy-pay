@@ -897,3 +897,22 @@ class DatabaseEngine {
 }
 
 export const db = new DatabaseEngine();
+
+import {
+  PayLaterAccount,
+  UpiMandate,
+  CashbackReward,
+  GstInvoice,
+  SmartRoutingRule,
+  SubscriptionPlan,
+} from '../types/payment';
+
+// Extend DatabaseSchema type with new domain tables
+export interface ExtendedDatabaseSchema extends DatabaseSchema {
+  payLater: PayLaterAccount;
+  mandates: UpiMandate[];
+  rewards: CashbackReward[];
+  invoices: GstInvoice[];
+  smartRules: SmartRoutingRule[];
+  subscriptions: SubscriptionPlan[];
+}

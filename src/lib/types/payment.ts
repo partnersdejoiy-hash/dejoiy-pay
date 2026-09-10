@@ -214,3 +214,102 @@ export interface AuditLog {
   changes?: Record<string, { old: unknown; new: unknown }>;
   timestamp: string;
 }
+
+// --- Amazon Pay Extensions: Pay Later, AutoPay Mandates, Rewards ---
+export interface PayLaterAccount {
+  userId: string;
+  totalLimit: number;
+  availableLimit: number;
+  usedAmount: number;
+  dueAmount: number;
+  dueDate: string;
+  billingCycle: string;
+  status: 'ACTIVE' | 'BLOCKED';
+  spends: Array<{
+    id: string;
+    merchantName: string;
+    amount: number;
+    date: string;
+    status: 'BILLED' | 'UNBILLED';
+  }>;
+}
+
+export interface UpiMandate {
+  id: string;                   // dj_man_...
+  userId: string;
+  merchantName: string;
+  vpa: string;
+  amountCap: number;
+  frequency: 'DAILY' | 'WEEKLY' | 'MONTHLY' | 'AS_PRESENTED';
+  startDate: string;
+  endDate: string;
+  status: 'ACTIVE' | 'PAUSED' | 'REVOKED';
+  nextExecutionDate: string;
+  lastExecutionDate?: string;
+  lastExecutionStatus?: 'SUCCESS' | 'FAILED';
+  purpose: string;
+}
+
+export interface CashbackReward {
+  id: string;
+  title: string;
+  description: string;
+  amount: number;
+  isScratched: boolean;
+  unlockedAt: string;
+  expiryDate: string;
+}
+
+// --- Razorpay Extensions: Invoices, Smart Routing ---
+export interface InvoiceItem {
+  id: string;
+  description: string;
+  quantity: number;
+  unitPrice: number;
+  taxRate: number; // e.g. 18 for 18% GST
+  total: number;
+}
+
+export interface GstInvoice {
+  id: string;                   // dj_inv_...
+  invoiceNumber: string;
+  merchantId: string;
+  customer: {
+    name: string;
+    email: string;
+    phone: string;
+    address?: string;
+    gstin?: string;
+  };
+  items: InvoiceItem[];
+  subtotal: number;
+  taxAmount: number;
+  totalAmount: number;
+  status: 'DRAFT' | 'ISSUED' | 'PAID' | 'CANCELLED';
+  dueDate: string;
+  paidAt?: string;
+  paymentId?: string;
+  createdAt: string;
+}
+
+export interface SmartRoutingRule {
+  id: string;
+  name: string;
+  rail: 'upi' | 'domestic_card' | 'intl_card' | 'netbanking';
+  primaryProvider: ProviderType;
+  fallbackProvider: ProviderType;
+  maxLatencyMs: number;
+  active: boolean;
+}
+
+// --- Stripe Extensions: Subscriptions ---
+export interface SubscriptionPlan {
+  id: string;
+  name: string;
+  description: string;
+  amount: number;
+  currency: 'INR' | 'USD';
+  interval: 'monthly' | 'yearly';
+  activeSubscribers: number;
+  createdAt: string;
+}

@@ -5,16 +5,19 @@ import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import {
   LayoutDashboard,
+  Calculator,
   ArrowLeftRight,
   RotateCcw,
   Link2,
   QrCode,
+  FileText,
+  Repeat,
+  Network,
   Building2,
   BarChart3,
   Users,
   Code2,
   Settings,
-  ShieldAlert,
   Wallet,
 } from 'lucide-react';
 
@@ -26,10 +29,14 @@ interface SidebarItem {
 
 const navItems: SidebarItem[] = [
   { name: 'Overview', href: '/merchant', icon: LayoutDashboard },
+  { name: 'POS Counter Terminal', href: '/merchant/pos', icon: Calculator },
   { name: 'Transactions', href: '/merchant/transactions', icon: ArrowLeftRight },
   { name: 'Refunds', href: '/merchant/refunds', icon: RotateCcw },
   { name: 'Payment Links', href: '/merchant/payment-links', icon: Link2 },
   { name: 'QR Codes & Soundbox', href: '/merchant/qr-codes', icon: QrCode },
+  { name: 'GST Invoices', href: '/merchant/invoices', icon: FileText },
+  { name: 'Subscriptions', href: '/merchant/subscriptions', icon: Repeat },
+  { name: 'Smart Routing', href: '/merchant/smart-routing', icon: Network },
   { name: 'Settlements', href: '/merchant/settlements', icon: Building2 },
   { name: 'Analytics & Reports', href: '/merchant/analytics', icon: BarChart3 },
   { name: 'Customers', href: '/merchant/customers', icon: Users },
@@ -41,7 +48,7 @@ export function MerchantSidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="w-64 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col justify-between shrink-0 h-screen sticky top-0">
+    <aside className="w-64 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col justify-between shrink-0 h-screen sticky top-0 overflow-y-auto">
       <div>
         {/* Brand Header */}
         <div className="h-16 flex items-center justify-between px-6 border-b border-slate-200 dark:border-slate-800">
@@ -68,7 +75,7 @@ export function MerchantSidebar() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  'flex items-center space-x-3 px-3 py-2 text-sm font-medium rounded-md transition-colors',
+                  'flex items-center space-x-3 px-3 py-2 text-xs font-medium rounded-md transition-colors',
                   isActive
                     ? 'bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900 font-semibold'
                     : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-slate-100'
@@ -84,7 +91,6 @@ export function MerchantSidebar() {
 
       {/* Footer Switcher */}
       <div className="p-4 border-t border-slate-200 dark:border-slate-800 space-y-3">
-        {/* Switch to Consumer Wallet View */}
         <Link
           href="/consumer"
           className="flex items-center justify-between p-2.5 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-xs text-slate-700 dark:text-slate-300 font-medium"
@@ -96,7 +102,6 @@ export function MerchantSidebar() {
           <span className="text-[10px] text-slate-400">Personal &rarr;</span>
         </Link>
 
-        {/* Environment Badge */}
         <div className="flex items-center justify-between text-xs text-slate-500">
           <div className="flex items-center space-x-1.5">
             <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />

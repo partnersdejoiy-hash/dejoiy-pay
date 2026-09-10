@@ -3,7 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { formatINR } from '@/lib/utils';
-import { Wallet, Shield, ArrowRightLeft, Bell } from 'lucide-react';
+import { Wallet, Shield, ArrowRightLeft, CreditCard, RotateCcw, Gift, ReceiptText } from 'lucide-react';
 
 interface ConsumerNavbarProps {
   balance?: number;
@@ -29,21 +29,21 @@ export function ConsumerNavbar({ balance = 24850.75 }: ConsumerNavbarProps) {
         </Link>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center space-x-6 text-sm font-medium text-slate-600 dark:text-slate-300">
+        <nav className="hidden md:flex items-center space-x-5 text-xs font-medium text-slate-600 dark:text-slate-300">
           <Link href="/consumer" className={pathname === '/consumer' ? 'text-emerald-600 font-semibold' : 'hover:text-slate-900 dark:hover:text-white'}>
-            Home
+            Wallet Home
           </Link>
-          <Link href="/consumer/pay" className={pathname === '/consumer/pay' ? 'text-emerald-600 font-semibold' : 'hover:text-slate-900 dark:hover:text-white'}>
-            Send Money
+          <Link href="/consumer/paylater" className={pathname === '/consumer/paylater' ? 'text-emerald-600 font-semibold' : 'hover:text-slate-900 dark:hover:text-white'}>
+            Pay Later (BNPL)
           </Link>
-          <Link href="/consumer/scan" className={pathname === '/consumer/scan' ? 'text-emerald-600 font-semibold' : 'hover:text-slate-900 dark:hover:text-white'}>
-            Scan & Pay
+          <Link href="/consumer/autopay" className={pathname === '/consumer/autopay' ? 'text-emerald-600 font-semibold' : 'hover:text-slate-900 dark:hover:text-white'}>
+            AutoPay Mandates
+          </Link>
+          <Link href="/consumer/rewards" className={pathname === '/consumer/rewards' ? 'text-emerald-600 font-semibold' : 'hover:text-slate-900 dark:hover:text-white'}>
+            Cashback & Rewards
           </Link>
           <Link href="/consumer/transactions" className={pathname === '/consumer/transactions' ? 'text-emerald-600 font-semibold' : 'hover:text-slate-900 dark:hover:text-white'}>
             Passbook
-          </Link>
-          <Link href="/consumer/security" className={pathname === '/consumer/security' ? 'text-emerald-600 font-semibold' : 'hover:text-slate-900 dark:hover:text-white'}>
-            Security
           </Link>
         </nav>
 
