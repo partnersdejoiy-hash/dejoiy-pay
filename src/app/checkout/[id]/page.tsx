@@ -76,8 +76,8 @@ export default function CheckoutPage() {
       {/* Top minimal brand */}
       <div className="max-w-md mx-auto w-full flex items-center justify-between pb-4">
         <div className="flex items-center space-x-2">
-          <span className="font-extrabold tracking-tight text-base text-slate-900 dark:text-white">DEJOIY</span>
-          <span className="bg-emerald-600 text-white text-[9px] font-black px-1.5 py-0.5 rounded">PAY</span>
+          <img src="/brand/dejoiy-pay.svg" alt="Dejoiy Pay" className="h-6 w-auto dark:hidden" />
+          <img src="/brand/dejoiy-pay-on-dark.svg" alt="Dejoiy Pay" className="h-6 w-auto hidden dark:block" />
         </div>
         <div className="flex items-center space-x-1 text-[11px] text-slate-500">
           <Lock className="w-3 h-3 text-emerald-600" />

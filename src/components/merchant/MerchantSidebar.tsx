@@ -53,12 +53,8 @@ export function MerchantSidebar() {
         {/* Brand Header */}
         <div className="h-16 flex items-center justify-between px-6 border-b border-slate-200 dark:border-slate-800">
           <Link href="/merchant" className="flex items-center space-x-2">
-            <span className="font-extrabold tracking-tight text-lg text-slate-900 dark:text-white">
-              DEJOIY
-            </span>
-            <span className="bg-emerald-600 text-white text-[11px] font-black px-1.5 py-0.5 rounded tracking-wider">
-              PAY
-            </span>
+            <img src="/brand/d-pay.svg" alt="Dejoiy Pay" className="h-7 w-auto dark:hidden" />
+            <img src="/brand/d-pay-on-dark.svg" alt="Dejoiy Pay" className="h-7 w-auto hidden dark:block" />
             <span className="text-[10px] uppercase font-semibold text-slate-400 dark:text-slate-500 border border-slate-200 dark:border-slate-700 px-1 py-0.5 rounded">
               BIZ
             </span>

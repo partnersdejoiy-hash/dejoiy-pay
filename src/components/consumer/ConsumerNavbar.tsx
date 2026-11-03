@@ -17,12 +17,8 @@ export function ConsumerNavbar({ balance = 24850.75 }: ConsumerNavbarProps) {
       <div className="max-w-4xl mx-auto px-4 h-16 flex items-center justify-between">
         {/* Brand */}
         <Link href="/consumer" className="flex items-center space-x-2">
-          <span className="font-extrabold tracking-tight text-lg text-slate-900 dark:text-white">
-            DEJOIY
-          </span>
-          <span className="bg-emerald-600 text-white text-[10px] font-black px-1.5 py-0.5 rounded tracking-wider">
-            PAY
-          </span>
+          <img src="/brand/dejoiy-pay.svg" alt="Dejoiy Pay" className="h-7 w-auto dark:hidden" />
+          <img src="/brand/dejoiy-pay-on-dark.svg" alt="Dejoiy Pay" className="h-7 w-auto hidden dark:block" />
           <span className="text-[10px] font-medium text-slate-500 border border-slate-200 dark:border-slate-700 px-1 py-0.5 rounded hidden sm:inline-block">
             WALLET
           </span>

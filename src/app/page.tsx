@@ -21,12 +21,8 @@ export default function HomePage() {
       <header className="border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 sticky top-0 z-30">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
           <div className="flex items-center space-x-2.5">
-            <span className="font-extrabold tracking-tight text-xl text-slate-900 dark:text-white">
-              DEJOIY
-            </span>
-            <span className="bg-emerald-600 text-white text-[10px] font-black px-1.5 py-0.5 rounded tracking-wider">
-              PAY
-            </span>
+            <img src="/brand/dejoiy-pay.svg" alt="Dejoiy Pay" className="h-8 w-auto dark:hidden" />
+            <img src="/brand/dejoiy-pay-on-dark.svg" alt="Dejoiy Pay" className="h-8 w-auto hidden dark:block" />
           </div>
 
           <div className="flex items-center space-x-3">

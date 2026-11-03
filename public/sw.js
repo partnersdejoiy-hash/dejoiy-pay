@@ -1,7 +1,7 @@
 // DejoiY Pay Service Worker v1.0.0
 // Strict financial caching rules: Never cache financial mutation APIs or payment endpoints.
 
-const CACHE_NAME = 'dejoiypay-cache-v1';
+const CACHE_NAME = 'dejoiypay-cache-v2';
 const STATIC_ASSETS = [
   '/',
   '/manifest.json',
@@ -9,6 +9,7 @@ const STATIC_ASSETS = [
   '/icon-512.png',
   '/apple-touch-icon.png',
   '/favicon.png',
+  '/favicon.svg',
   '/sdk/dejoiypay.js'
 ];
 

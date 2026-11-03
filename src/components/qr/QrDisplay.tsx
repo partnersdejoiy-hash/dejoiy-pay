@@ -73,10 +73,7 @@ export function QrDisplay({
       {/* Brand Header */}
       <div className="bg-slate-900 text-white p-4 text-center">
         <div className="flex items-center justify-center space-x-1.5 mb-1">
-          <span className="font-bold tracking-tight text-sm">DEJOIY</span>
-          <span className="bg-emerald-500 text-slate-950 text-[10px] font-black px-1.5 py-0.5 rounded tracking-wider">
-            PAY
-          </span>
+          <img src="/brand/dejoiy-pay-on-dark.svg" alt="Dejoiy Pay" className="h-6 w-auto" />
         </div>
         <p className="text-xs text-slate-300 font-medium truncate">{merchantName}</p>
         <p className="text-[11px] text-slate-400 font-mono mt-0.5">{vpa}</p>

@@ -94,7 +94,7 @@ export default function ConsumerPayLaterPage() {
       <div className="rounded-2xl bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-950 text-white p-6 shadow-xl border border-slate-700/60 relative overflow-hidden">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center space-x-2">
-            <span className="font-extrabold text-base tracking-tight">DEJOIY</span>
+            <img src="/brand/dejoiy-wordmark-on-dark.svg" alt="Dejoiy" className="h-5 w-auto" />
             <span className="bg-emerald-500 text-slate-950 text-[10px] font-black px-1.5 py-0.5 rounded">
               POSTPAID
             </span>

@@ -23,8 +23,8 @@ export function MerchantHeader({ onInstantSettlement, isSettling }: MerchantHead
           {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
         <Link href="/merchant" className="flex items-center space-x-1.5">
-          <span className="font-extrabold text-sm text-slate-900 dark:text-white">DEJOIY</span>
-          <span className="bg-emerald-600 text-white text-[10px] font-black px-1.5 py-0.5 rounded">PAY</span>
+          <img src="/brand/d-pay.svg" alt="Dejoiy Pay" className="h-6 w-auto dark:hidden" />
+          <img src="/brand/d-pay-on-dark.svg" alt="Dejoiy Pay" className="h-6 w-auto hidden dark:block" />
         </Link>
       </div>
 
